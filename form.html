@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .form-container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        .btn-download {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-download:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Form</h1>
+        <form id="customForm" action="submit_form.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="Logic">Logic</label>
+                <input type="number" id="Logic" name="Logic" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="machine-learning">Machine Learning</label>
+                <input type="number" id="machine-learning" name="machine_learning" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="smart-robot">Smart Robot</label>
+                <input type="number" id="smart-robot" name="smart_robot" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="hacking">Hacking</label>
+                <input type="number" id="hacking" name="hacking" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="monitoring-control">Monitoring and Control</label>
+                <input type="number" id="monitoring-control" name="monitoring_control" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="leadership">Leadership</label>
+                <input type="number" id="leadership" name="leadership" placeholder="Enter degree" required>
+            </div>
+            <div class="form-group">
+                <label for="statistics">Statistics</label>
+                <input type="number" id="statistics" name="statistics" placeholder="Enter degree" required>
+            </div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+        <a href="responses .php" class="btn-download"> All Data</a>
+    </div>
+    <script>
+        // Optional client-side validation
+        document.getElementById('customForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            if (!name || !email) {
+                alert("Name and Email are required!");
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
